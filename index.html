@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Network Installation & Management</title>
+    <link rel="icon" href="media/logo.jpg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <section id="Home">
         <nav class="main-nav">
             <div class="nav-brand">
-                <img src="" alt="Logo" class="nav-logo">
+                <img src="media/logo.jpg" alt="Logo" class="nav-logo">
                 <span class="nav-title">HAI TWINS RESOURCES GLOBAL</span>
             </div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle" />
@@ -238,12 +240,11 @@
                 </div>
         
             </div>
-            <div class="project-info" style="display: flex; flex-direction: column; align-items: center; margin-top: 24px;">
-                <a href="projects.html" class="see-more-btn">See More Projects</a>
-            </div>
-          ]
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
+        <div class="project-info" style="display: flex; flex-direction: column; align-items: center; margin-top: 24px;">
+            <a href="projects.html" class="see-more-btn">See More Projects</a>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
                     const animatedImages = document.querySelectorAll('.animate-fade-in');
                     animatedImages.forEach((img, i) => {
                         setTimeout(() => {
@@ -284,7 +285,7 @@
             <!-- To make the form functional and send emails, you need a backend service.
                 For static sites, you can use a service like Formspree, EmailJS, or Getform.
                 Example using Formspree: -->
-            <form action="https://formspree.io/f/mblypdgv" method="POST" id="realContactForm" style="display:none;">
+            <form action="https://formspree.io/f/xldnobyl" method="POST" id="realContactForm" style="display:none;">
                 <input type="text" name="name">
                 <input type="email" name="email">
                 <textarea name="message"></textarea>
@@ -292,7 +293,8 @@
                 <input type="hidden" name="_honey" value="">
                 <!-- Disable Captcha -->
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://constructionsux.github.io/boko/#contact">
+
+                <input type="hidden" name="_next" value="https://constructionsux.github.io/boko/index.html#contact">
             </form>
             <script>
             document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -334,17 +336,46 @@
                 <div class="contact-card animate-fade-in">
                     <i class="fa-solid fa-phone-volume"></i>
                     <h3>Call Us</h3>
-                    <a href="tel:(262) 873-0920">(262) 873-0920</a>
+                    <a href="tel:++2348039617837">+234-8039617837</a>
+                    <a href="tel:+123456789">+234-8123759044</a>
                 </div>
                 <div class="contact-card animate-fade-in" style="animation-delay:0.2s;">
                     <i class="fa-solid fa-envelope"></i>
                     <h3>Email</h3>
-                    <a href="mailto:codis1723@gmail.com">codis1723@gmail.com</a>
+                    <a href="mailto:haitwinsglobal@gmail.com">haitwinsglobal@gmail.com</a>
                 </div>
                 <div class="contact-card animate-fade-in" style="animation-delay:0.4s;">
                     <i class="fa-solid fa-location-dot"></i>
                     <h3>Address</h3>
-                    <p>123 Network Ave,<br>City, Country</p>
+                      <p>
+                        Suit 204 AHCN Tower Building, CIPM Road, Alausa, Ikeja, Lagos<br>
+                        <button id="showMapBtn" style="margin-top:8px; background:linear-gradient(135deg, #2a4d7a 0%, #4fa3ff 100%); color:#fff; border:none; border-radius:16px; padding:6px 18px; cursor:pointer; font-size:0.95em;">Show on Map</button>
+                    </p>
+                    <div id="mapContainer" style="display:none; margin-top:12px;">
+                        <iframe
+                            id="mapIframe"
+                            width="220"
+                            height="160"
+                            style="border:0; border-radius:10px;"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('showMapBtn');
+    const mapDiv = document.getElementById('mapContainer');
+    const mapIframe = document.getElementById('mapIframe');
+    btn.addEventListener('click', function() {
+        mapDiv.style.display = 'block';
+        mapIframe.src = "https://www.google.com/maps?q=Suit+204+AHCN+Tower+Building,+CIPM+Road,+Alausa,+Ikeja,+Lagos&output=embed";
+        btn.style.display = 'none';
+    });
+});
+</script>
+
                 </div>
             </div>
             <script>
