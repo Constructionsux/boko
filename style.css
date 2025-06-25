@@ -23,6 +23,11 @@ body {
     background: rgb(169, 157, 89);
     box-shadow: 0 8px 32px rgba(44,104,255,0.18);
 }
+@media(max-width:800px){
+    .showcase-icon{
+        display: none;
+    }
+}
 
 .showcase-icon .showcase-icon-main {
     display: flex;
@@ -42,6 +47,7 @@ body {
     animation: showcaseSlideIn 0.7s cubic-bezier(.4,1.2,.4,1);
     transition: box-shadow 0.3s, background 0.3s;
 }
+
 
 .showcase-icon .showcase-icon-main a{
     color: #fff;
@@ -73,8 +79,9 @@ body {
     min-height: 68px;
     border-radius: 0 0 24px 24px;
     box-shadow: 0 2px 12px rgba(44,104,255,0.08);
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-brand {

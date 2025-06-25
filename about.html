@@ -2,21 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us - Boko</title>
+    <title>About Us - HAI TWINS RESOURCES GLOBAL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f7f8fa;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f7f8fa 60%, #c7d2fe 100%);
             color: #222;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #6366f1 0%, #e0e7ff 80%);
+            opacity: 0.13;
+            z-index: 0;
+            pointer-events: none;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #60a5fa 0%, #f7f8fa 90%);
+            opacity: 0.11;
+            z-index: 0;
+            pointer-events: none;
         }
         header {
-            background: #2d3e50;
+            background: rgba(45, 62, 80, 0.92);
             color: #fff;
-            padding: 30px 0 20px 0;
+            padding: 38px 0 24px 0;
             text-align: center;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+            box-shadow: 0 6px 32px rgba(44,62,80,0.10);
+            position: relative;
+            z-index: 1;
             animation: fadeInDown 1s;
         }
         @keyframes fadeInDown {
@@ -24,12 +56,14 @@
             to { opacity: 1; transform: translateY(0);}
         }
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
-            padding: 40px 30px;
+            max-width: 900px;
+            margin: 48px auto 40px auto;
+            background: rgba(255,255,255,0.96);
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(44,62,80,0.13);
+            padding: 48px 40px 40px 40px;
+            position: relative;
+            z-index: 2;
             animation: fadeInUp 1.2s;
         }
         @keyframes fadeInUp {
@@ -37,67 +71,125 @@
             to { opacity: 1; transform: translateY(0);}
         }
         h2 {
-            color: #2d3e50;
+            color: #3730a3;
             margin-top: 0;
+            letter-spacing: 0.01em;
+            font-size: 1.6em;
+        }
+        ul {
+            padding-left: 1.3em;
         }
         .team {
             display: flex;
-            gap: 30px;
+            gap: 36px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 36px;
+            justify-content: center;
         }
         .member {
-            flex: 1 1 180px;
-            background: #f0f4f8;
-            border-radius: 8px;
-            padding: 20px;
+            flex: 1 1 220px;
+            background: linear-gradient(120deg, #e0e7ff 60%, #f0f4f8 100%);
+            border-radius: 14px;
+            padding: 28px 18px 22px 18px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.32s cubic-bezier(.4,2,.6,1), box-shadow 0.32s;
             cursor: pointer;
+            box-shadow: 0 4px 18px rgba(99,102,241,0.08);
+            position: relative;
+            overflow: hidden;
         }
-        .member:hover {
-            transform: translateY(-8px) scale(1.04);
-            box-shadow: 0 8px 24px rgba(44,62,80,0.12);
-            background: #eaf3fb;
+        .member:hover, .member:focus {
+            transform: translateY(-10px) scale(1.045);
+            box-shadow: 0 12px 36px rgba(99,102,241,0.13);
+            background: linear-gradient(120deg, #c7d2fe 60%, #e0e7ff 100%);
         }
         .member img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin-bottom: 12px;
-            border: 2px solid #2d3e50;
+            margin-bottom: 14px;
+            border: 3px solid #6366f1;
+            box-shadow: 0 2px 10px rgba(99,102,241,0.10);
+            background: #fff;
         }
         .member-name {
-            font-weight: bold;
-            color: #2d3e50;
+            font-weight: 600;
+            color: #3730a3;
+            font-size: 1.13em;
+            margin-bottom: 2px;
         }
         .member-role {
-            font-size: 0.95em;
+            font-size: 1em;
             color: #555;
+            margin-bottom: 8px;
         }
         .fun-fact {
-            margin-top: 12px;
-            font-size: 0.93em;
-            color: #0077b6;
+            margin-top: 14px;
+            font-size: 0.97em;
+            color: #2563eb;
+            background: #e0e7ff;
+            border-radius: 6px;
+            padding: 8px 10px;
             display: none;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.07);
+            animation: fadeInFact 0.5s;
+        }
+        @keyframes fadeInFact {
+            from { opacity: 0; transform: scale(0.95);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        @media (max-width: 900px) {
+            .container { padding: 32px 12px 24px 12px; }
+            .team { gap: 18px; }
         }
         @media (max-width: 600px) {
-            .container { padding: 20px 8px; }
-            .team { flex-direction: column; gap: 16px; }
+            .container { padding: 18px 4px 12px 4px; }
+            .team { flex-direction: column; gap: 14px; }
+            .member { padding: 20px 8px 16px 8px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>About Boko</h1>
-        <p>Learn more about our mission and the team behind Boko.</p>
+        <h1>About HAI TWINS RESOURCES GLOBAL</h1>
+        <p>Learn more about our mission and the team behind HAI TWINS RESOURCES GLOBAL.</p>
     </header>
     <div class="container">
-        <h2>Our Mission</h2>
+        <h2>About HAI TWINS RESOURCES GLOBAL</h2>
         <p>
-            Boko is dedicated to providing innovative web solutions that empower users and businesses alike. 
-            Our team is passionate about technology, creativity, and delivering exceptional digital experiences.
+            HAI TWINS RESOURCES GLOBAL is a leading provider of cutting-edge networking and ICT solutions. With a strong commitment to innovation, reliability, and customer satisfaction, we specialize in the design, installation, and maintenance of network infrastructures for businesses, institutions, and government organizations.
         </p>
+        <p>
+            Our mission is to empower clients with seamless connectivity through robust, secure, and scalable network systems. We combine technical expertise with a client-focused approach to deliver tailored solutions that meet the demands of the modern digital world.
+        </p>
+        <h2>Our Mission</h2>
+        <ul>
+            <li>To deliver high-performance network solutions that drive business growth.</li>
+            <li>To provide reliable and secure infrastructure tailored to client needs.</li>
+            <li>To maintain long-term partnerships through exceptional service and support.</li>
+        </ul>
+        <h2>Clients and Sectors Served</h2>
+        <p>We have served clients across multiple industries, including:</p>
+        <ul>
+            <li>Financial Institutions</li>
+            <li>Educational Institutions</li>
+            <li>Government Agencies</li>
+            <li>Health Facilities</li>
+            <li>Corporate Offices</li>
+        </ul>
+        <ul>
+            <li>UBA Bank / First Bank Head Quarters Lagos</li>
+            <li>Covenant University Lagos</li>
+            <li>Dangote Refinery Lagos</li>
+            <li>International Airport / Legend Hotel Lagos</li>
+            <li>Small and Medium Enterprises (SMEs) - Taylor Communication Company</li>
+        </ul>
+        <h2>Team and Expertise</h2>
+        <p>
+            Our team consists of certified professionals with expertise in networking, cybersecurity, and systems engineering. We are committed to continuous training and upskilling to stay ahead of industry trends and technologies.
+        </p>
+        <p><strong>HAI TWINS RESOURCES GLOBAL</strong><br>
+        Founded: 2015</p>
         <h2>Meet the Team</h2>
         <div class="team">
             <div class="member" onclick="showFact(this)">
@@ -118,6 +210,13 @@
                 <div class="member-role">Project Manager</div>
                 <div class="fun-fact">Has visited 20+ countries!</div>
             </div>
+        </div>
+        <div style="text-align:center; margin-top:32px;">
+            <a href="index.html">
+                <button style="padding: 12px 28px; font-size: 1em; background: #6366f1; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">
+                    Back to Home
+                </button>
+            </a>
         </div>
     </div>
     <script>
