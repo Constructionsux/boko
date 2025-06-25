@@ -288,6 +288,11 @@
                 <input type="text" name="name">
                 <input type="email" name="email">
                 <textarea name="message"></textarea>
+                <!-- HoneyPot -->
+                <input type="hidden" name="_honey" value="">
+                <!-- Disable Captcha -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://constructionsux.github.io/boko/#contact">
             </form>
             <script>
             document.getElementById('contactForm').addEventListener('submit', function(e) {
