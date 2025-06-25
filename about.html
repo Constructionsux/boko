@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Boko</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f8fa;
+            color: #222;
+        }
+        header {
+            background: #2d3e50;
+            color: #fff;
+            padding: 30px 0 20px 0;
+            text-align: center;
+            animation: fadeInDown 1s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            padding: 40px 30px;
+            animation: fadeInUp 1.2s;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        h2 {
+            color: #2d3e50;
+            margin-top: 0;
+        }
+        .team {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .member {
+            flex: 1 1 180px;
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .member:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(44,62,80,0.12);
+            background: #eaf3fb;
+        }
+        .member img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 2px solid #2d3e50;
+        }
+        .member-name {
+            font-weight: bold;
+            color: #2d3e50;
+        }
+        .member-role {
+            font-size: 0.95em;
+            color: #555;
+        }
+        .fun-fact {
+            margin-top: 12px;
+            font-size: 0.93em;
+            color: #0077b6;
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 8px; }
+            .team { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Boko</h1>
+        <p>Learn more about our mission and the team behind Boko.</p>
+    </header>
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>
+            Boko is dedicated to providing innovative web solutions that empower users and businesses alike. 
+            Our team is passionate about technology, creativity, and delivering exceptional digital experiences.
+        </p>
+        <h2>Meet the Team</h2>
+        <div class="team">
+            <div class="member" onclick="showFact(this)">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+                <div class="member-name">Alex Johnson</div>
+                <div class="member-role">Lead Developer</div>
+                <div class="fun-fact">Loves hiking and open-source projects!</div>
+            </div>
+            <div class="member" onclick="showFact(this)">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                <div class="member-name">Maria Lee</div>
+                <div class="member-role">UI/UX Designer</div>
+                <div class="fun-fact">Sketches comic strips in her free time.</div>
+            </div>
+            <div class="member" onclick="showFact(this)">
+                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team Member">
+                <div class="member-name">Samuel Green</div>
+                <div class="member-role">Project Manager</div>
+                <div class="fun-fact">Has visited 20+ countries!</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showFact(memberDiv) {
+            // Hide all fun facts first
+            document.querySelectorAll('.fun-fact').forEach(fact => fact.style.display = 'none');
+            // Show the clicked member's fun fact
+            const fact = memberDiv.querySelector('.fun-fact');
+            if (fact) fact.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
